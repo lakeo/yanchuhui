@@ -24,18 +24,19 @@ export default class extends Component {
     super(props);
     this.state = {
       contexts: [{
-        rowIndex: 0,
+        rowIndex: 3,
         sessionLength: 8,
         sessionTitle: '武汉站',
         title: '张学友2017演唱会'
       }],
-      selectedIndex: 0
+      selectedIndex: 0,
+      count: 10,
     }
 
   }
 
   render () {
-    const {rowIndex, sessionLength, sessionTitle, title} = this.state.contexts[this.state.selectedIndex]
+    const {rowIndex, sessionLength, sessionTitle, title} = this.state.contexts[0]
     return (
       <View style={styles.container}>
         <View style={styles.header}>
