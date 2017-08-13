@@ -10,25 +10,14 @@ import ShowCarousel from './ShowCarousel'
 
 
 const StacksOverTabs = StackNavigator({
-  Root: {
+  Home: {
     screen: ShowListScreen,
     navigationOptions: ({navigation}) => ({
-      title: '演唱会',
+      title: '演唱汇',
       headerTintColor: 'white',
       headerStyle: {
-        backgroundColor: '#282b35',
+        backgroundColor: '#4faeca',
       },
-      headerRight:  (<Ionicons
-          name={'ios-search'}
-          size={26}
-          style={{marginRight: 10, color: 'white'}}
-      />),
-      headerLeft:  (<Ionicons
-          name={'ios-contact'}
-          size={26}
-          style={{marginLeft: 10, color: 'white'}}
-          onPress={() => navigation.navigate('DrawerOpen')}
-      />)
     }),
   },
   ShowCarousel: {

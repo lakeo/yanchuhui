@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react'
+import { NavigationActions } from 'react-navigation';
 import ShowDetail from './ShowDetail'
 import Carousel from './../components/Carousel'
 import F8PageControl from './../components/F8PageControl'
@@ -26,8 +27,7 @@ export default class extends Component {
       contexts: [{
         rowIndex: 3,
         sessionLength: 8,
-        sessionTitle: '武汉站',
-        title: '张学友2017演唱会'
+        title: ' 周杰伦2017演唱会'
       }],
       selectedIndex: 0,
       count: 10,
@@ -46,8 +46,6 @@ export default class extends Component {
           <View style={styles.headerContent}>
             <Text style={styles.title} numberOfLines={2}>
               <Text style={styles.day}>{title}</Text>
-              {'\n'}
-              <Text style={styles.time}>{sessionTitle}</Text>
             </Text>
             <F8PageControl
               count={sessionLength}
@@ -80,7 +78,13 @@ export default class extends Component {
   }
 
   dismiss = () => {
-    this.props.navigation.navigate('Root');
+    this.props.navigation.dispatch(NavigationActions.reset(
+                 {
+                    index: 0,
+                    actions: [
+                      NavigationActions.navigate({ routeName: 'Home'})
+                    ]
+                  }));
   };
 }
 

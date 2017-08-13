@@ -8,7 +8,8 @@ import {
   Text,
   Image,
   ScrollView,
-  StyleSheet
+  StyleSheet,
+  TouchableOpacity
 } from 'react-native'
 
 class Show extends Component {
@@ -26,8 +27,14 @@ class Show extends Component {
   render () {
     const {style, lineNumber} = this.props
     return (
-      <View style={[{padding: 14}, style]}>
-          
+      <View style={[style, {alignItems: 'center', justifyContent: 'space-between'}]}>
+           <Image source={require('../assets/dibiaozuiqiang.jpg')} style={{height: 400, width: 300}}></Image>
+           <View style={{width: 330, justifyContent: 'space-between', padding: 10}}>
+             <Text style={{fontSize: 18, }} numberOfLines={2}>{'周杰伦地表最强世界巡回演唱会-北京站'}</Text>
+             <Text style={{fontSize: 14, color: 'gray' }} numberOfLines={2}>{'2017.08.26 周六 19:30'}</Text>
+             <Text style={{fontSize: 14, color: 'gray' }}>{'北京工人体育馆'}</Text>
+             <Text style={{fontSize: 14, color: 'green'}}>余票:{100}张</Text>
+           </View>
       </View>
     )
   }
@@ -41,16 +48,18 @@ export default class ShowDetail extends Component {
   }
 
   render () {
-    const sessionColor = 'red'
     return (
       <View style={[styles.container, this.props.style]}>
-        <View style={styles.header}>
-          <Text style={[styles.headerFont, ]}>地点：{'四川省体育馆'}</Text>
-          <Text style={styles.headerFont}>时间： {'2017-09-08 周五 19：30'} </Text>
-        </View>
         <ScrollView style={styles.content}>
             <Show style={{paddingLeft: 0, paddingRight: 0}} lineNumber={2} />
         </ScrollView>
+        <View style={{borderTopWidth: 1, borderColor: '#eee'}}>
+         <TouchableOpacity activeOpacity={0.7} style={{backgroundColor: '#4DC7A4', height: 40, marginTop: 10,borderRadius: 20,alignItems: 'center',justifyContent: 'center'}}>
+          <Text style={{color: 'white'}}>
+            {'购买'}
+          </Text>
+         </TouchableOpacity>
+        </View>
       </View>
     )
   }
@@ -72,7 +81,7 @@ const styles = StyleSheet.create({
     color: '#555555'
   },
   content: {
-    padding: 10
+    padding: 2
   },
   description: {
     fontSize: 13,

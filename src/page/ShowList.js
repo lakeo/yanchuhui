@@ -124,7 +124,7 @@ class ShowListScreen extends React.PureComponent {
         extraData={this.state}
         keyExtractor={this._keyExtractor}
         renderItem={this.renderRow}
-        style={{backgroundColor: '#424242',}}
+        style={{backgroundColor: '#6ec0df',}}
         refreshControl={
           <RefreshControl
             refreshing={isRefreshing}
